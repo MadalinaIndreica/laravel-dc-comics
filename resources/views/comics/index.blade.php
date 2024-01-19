@@ -40,8 +40,7 @@
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">
-                                   
+                                <button class="btn btn-danger" type="submit" onclick="return confirm('{{ __('sicuro di voler eleminare questo elemento?') }}')"> 
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                         </td>
