@@ -10,15 +10,15 @@
 
         <ul>
             <li>
-                <strong>Tipologia: </strong>
+                <strong>Type: </strong>
                 {{ $comic->type }}
             </li>
             <li>
-                <strong>Prezzo:</strong>
+                <strong>Price:</strong>
                 {{ $comic->price }}
             </li>
             <li>
-                <strong>Serie:</strong>
+                <strong>Series:</strong>
                 {{ $comic->series }}
             </li>
         </ul>
