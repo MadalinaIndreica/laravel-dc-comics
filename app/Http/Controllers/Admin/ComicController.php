@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreComicRequest;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
@@ -35,9 +36,23 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
+
     {
-         $form_data = $request->all();
+        // $request->validate([
+            //     'title' => 'required|min:5|max:250',
+            //     'description' => 'nullable',
+            //     'thumb' => 'required',
+            //     'price' => 'required',
+            //     'series' => 'required',
+            //     'sale_date' => 'required'
+            //     'type' => 'required'
+            // ], [
+            //     'title.required' => 'Il titolo è obbligatorio',
+            //     'title.min' => 'Il titolo deve essere lungo almeno :min caratteri' 
+            // ]);
+
+         $form_data = $request->validated();
 
          $comic = new Comic();
          $comic->title = $form_data['title'];
